@@ -1,7 +1,7 @@
 #include <RemoteTransmitter.h>
 #include "LongArray.h"
 
-//KaKuTransmitter Transmitter(11);
+KaKuTransmitter Transmitter(11);
 
 const int trigPin = 13;
 const int echoPin = 12;
