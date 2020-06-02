@@ -1,42 +1,32 @@
 # Arduino Library base folder and example structure
-HUB_BASE = hub
+HUB_BASE = hub/mainframe
 STAIR_BASE = stair/mainframe
-SKETCH ?= MainFrame
-
-# Arduino CLI executable name and directory location
-ARDUINO_CLI = arduino-cli
-ARDUINO_CLI_DIR = .
+SKETCH ?= Main.ino
 
 # Arduino CLI Board type
 BOARD_TYPE ?= arduino:avr:uno
 
 # Default port to upload to
-SERIAL_PORT ?= COM18
+SERIAL_PORT ?= COM3
 
 # Optional verbose compile/upload trigger
 V ?= 0
 VERBOSE=
 
-# Build path -- used to store built binary and object files
-BUILD_DIR=build
-HUB_BUILD_PATH=$(PWD)/$(HUB_BASE)/$(SKETCH)/$(BUILD_DIR)
-STAIR_BUILD_PATH=$(PWD)/$(HUB_BASE)/$(SKETCH)/$(BUILD_DIR)
-
 ifneq ($(V), 0)
-    VERBOSE=-v
+	VERBOSE=-v
 endif
 
-.PHONY: all verify_hub build_hub clean
-
-all: verify_hub
+.PHONY: verify_hub build_hub verify_stair build_stair
 
 verify_hub:
-    arduino-cli compile $(VERBOSE) --build-path=$(HUB_BUILD_PATH) --build-cache-path=$(HUB_BUILD_PATH) -b $(BOARD_TYPE) $(HUB_BASE)/$(SKETCH)
+	arduino-cli compile $(VERBOSE) -n -b $(BOARD_TYPE) -t $(HUB_BASE)/$(SKETCH)
 
 build_hub:
-    $(ARDUINO_CLI_DIR)/$(ARDUINO_CLI) upload $(VERBOSE) -p $(SERIAL_PORT) --fqbn $(BOARD_TYPE) $(HUB_BASE)/$(SKETCH)
+	arduino-cli upload $(VERBOSE) -p $(SERIAL_PORT) -b $(BOARD_TYPE) $(HUB_BASE)/$(SKETCH)
 
-clean:
-    @rm -rf $(BUILD_PATH)
-    @rm $(HUB_BASE)/$(SKETCH)/*.elf
-    @rm $(HUB_BASE)/$(SKETCH)/*.hex
+verify_stair:
+	arduino-cli compile $(VERBOSE) -n -b $(BOARD_TYPE) -t $(STAIR_BASE)/$(SKETCH)
+
+build_stair:
+	arduino-cli upload $(VERBOSE) -p $(SERIAL_PORT) -b $(BOARD_TYPE) $(HUB_BASE)/$(SKETCH)
