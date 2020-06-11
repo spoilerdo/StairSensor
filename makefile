@@ -1,6 +1,6 @@
 # Arduino Library base folder and example structure
 HUB_BASE = hub/mainframe
-STAIR_BASE = stair/mainframe
+STAIR_BASE = stair
 SKETCH ?= Main.ino
 
 # Arduino CLI Board type

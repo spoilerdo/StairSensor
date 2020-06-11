@@ -4,15 +4,15 @@
 #include <Arduino.h>
 
 class LongArray {
-    public:
-        LongArray(int arraySize);
-        void add(long value);
-        long avg();
+   public:
+    LongArray(int arraySize);
+    void add(long value);
+    long avg();
 
-    protected:
-        int _arraySize;
-        int _index;
-        long  _array[];
+   protected:
+    int _arraySize;
+    int _index;
+    long _array[];
 };
 
 #endif

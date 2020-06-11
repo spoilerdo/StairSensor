@@ -3,5 +3,5 @@
     "board": "arduino:avr:nano",
     "configuration": "cpu=atmega328old",
     "port": "COM3",
-    "sketch": "hub\\MainFrame.ino"
+    "sketch": "stair\\Main.ino"
 }
