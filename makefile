@@ -1,7 +1,6 @@
 # Arduino Library base folder and example structure
-HUB_BASE = hub/mainframe
+HUB_BASE = hub
 STAIR_BASE = stair
-SKETCH ?= Main.ino
 
 # Arduino CLI Board type
 BOARD_TYPE ?= arduino:avr:uno
@@ -20,13 +19,13 @@ endif
 .PHONY: verify_hub build_hub verify_stair build_stair
 
 verify_hub:
-	arduino-cli compile $(VERBOSE) -n -b $(BOARD_TYPE) -t $(HUB_BASE)/$(SKETCH)
+	arduino-cli compile $(VERBOSE) -n -b $(BOARD_TYPE) -t $(HUB_BASE)/
 
 build_hub:
-	arduino-cli upload $(VERBOSE) -p $(SERIAL_PORT) -b $(BOARD_TYPE) $(HUB_BASE)/$(SKETCH)
+	arduino-cli upload $(VERBOSE) -p $(SERIAL_PORT) -b $(BOARD_TYPE) $(HUB_BASE)/
 
 verify_stair:
-	arduino-cli compile $(VERBOSE) -n -b $(BOARD_TYPE) -t $(STAIR_BASE)/$(SKETCH)
+	arduino-cli compile $(VERBOSE) -n -b $(BOARD_TYPE) -t $(STAIR_BASE)/
 
 build_stair:
-	arduino-cli upload $(VERBOSE) -p $(SERIAL_PORT) -b $(BOARD_TYPE) $(HUB_BASE)/$(SKETCH)
+	arduino-cli upload $(VERBOSE) -p $(SERIAL_PORT) -b $(BOARD_TYPE) $(HUB_BASE)/

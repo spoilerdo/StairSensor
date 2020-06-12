@@ -1,5 +1,7 @@
 #include "DistanceSensor.h"
 
+DistanceSensor::DistanceSensor() {}
+
 long DistanceSensor::get(int _trigPin, int _echoPin) {
     long duration, cm;
 

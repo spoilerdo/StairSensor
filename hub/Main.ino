@@ -1,6 +1,6 @@
 #include <RemoteReceiver.h>
 #include <RemoteTransmitter.h>
-#include "LightTimer.h"
+#include "src/LightTimer.h"
 
 const int maxStairs = 2;
 const int Stairs[] = {13, 11};

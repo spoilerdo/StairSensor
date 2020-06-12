@@ -1,14 +1,12 @@
-#ifdef DistanceSensor_h
+#ifndef DistanceSensor_h
 #define DistanceSensor_h
 
 #include <Arduino.h>
 
 class DistanceSensor {
    public:
-    static long get(int _trigPin, int _echoPin);
-
-   private:
     DistanceSensor();
+    long get(int _trigPin, int _echoPin);
 };
 
 #endif
