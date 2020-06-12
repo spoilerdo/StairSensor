@@ -7,14 +7,14 @@
 class Light {
    public:
     Light(int maxDelay, int pin);
-    void Toggle(int delay, boolean state, int i);
+    void Toggle();
     LightTimer Timer();
+    int Pin();
 
    protected:
     int _maxDelay;
     int _pin;
     LightTimer _timer;
-    
 };
 
 #endif

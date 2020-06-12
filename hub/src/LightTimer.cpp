@@ -7,10 +7,10 @@ LightTimer::LightTimer(int maxDelay, int pin) {
     _state = false;
 }
 
-void LightTimer::Read(int delay) {
+void LightTimer::Read() {
     if (digitalRead(_pin) == HIGH) {
         if (delay < _maxDelay) {
-            ChangeValue(delay + 1, true);
+            ChangeValue(_delay + 1, true);
         } else {
             Reset();
         }
@@ -20,6 +20,10 @@ void LightTimer::Read(int delay) {
 void LightTimer::Reset() {
     ChangeValue(0, false);
     digitalWrite(_pin, LOW);
+}
+
+bool LightTimer::State() {
+    return _state;
 }
 
 void LightTimer::ChangeValue(int delay, boolean state) {

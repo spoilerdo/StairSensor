@@ -6,8 +6,9 @@
 class LightTimer {
    public:
     LightTimer(int maxDelay, int pin);
-    void Read(int delay);
+    void Read();
     void Reset();
+    bool State();
 
    protected:
     int _maxDelay;
