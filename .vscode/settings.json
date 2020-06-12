@@ -1,5 +1,11 @@
 {
     "files.associations": {
-        "xmemory": "cpp"
-    }
+        "xmemory": "cpp",
+        "iosfwd": "cpp",
+        "vector": "cpp",
+        "complex": "cpp"
+    },
+    "cSpell.words": [
+        "println"
+    ]
 }
