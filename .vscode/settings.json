@@ -3,7 +3,8 @@
         "xmemory": "cpp",
         "iosfwd": "cpp",
         "vector": "cpp",
-        "complex": "cpp"
+        "complex": "cpp",
+        "iterator_base": "cpp"
     },
     "cSpell.words": [
         "println"

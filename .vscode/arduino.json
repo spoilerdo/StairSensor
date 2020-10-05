@@ -1,0 +1,7 @@
+{
+    "port": "COM3",
+    "board": "arduino:avr:nano",
+    "configuration": "cpu=atmega328old",
+    "sketch": "stair\\stair.ino",
+    "programmer": "AVRISP mkII"
+}

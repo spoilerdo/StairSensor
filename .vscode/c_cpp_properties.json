@@ -3,6 +3,8 @@
         {
             "name": "Win32",
             "includePath": [
+                "C:\\Users\\marti\\AppData\\Local\\Arduino15\\packages\\arduino\\tools\\**",
+                "C:\\Users\\marti\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.1\\**",
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/stair/",
                 "D:/Documenten/Arduino/libraries",
@@ -12,7 +14,8 @@
                 "D:/Software/Arduino/hardware/arduino/avr/libraries/SoftwareSerial/src",
                 "D:/Software/Arduino/hardware/arduino/avr/libraries/SPI/src",
                 "D:/Software/Arduino/hardware/arduino/avr/libraries/Wire/src",
-                "D:/Software/Arduino/hardware/arduino/avr/libraries/SPI/src"
+                "D:/Software/Arduino/hardware/arduino/avr/libraries/SPI/src",
+                "C:\\Users\\marti\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.3\\**"
             ],
             "defines": [
                 "_DEBUG",
@@ -26,7 +29,11 @@
             "compilerPath": "D:/Software/Arduino/hardware/tools/avr/bin/avr-gcc.exe",
             "cStandard": "c11",
             "cppStandard": "c++17",
-            "intelliSenseMode": "clang-x64"
+            "intelliSenseMode": "clang-x64",
+            "forcedInclude": [
+                "C:\\Users\\marti\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.1\\cores\\arduino\\Arduino.h",
+                "C:\\Users\\marti\\AppData\\Local\\Arduino15\\packages\\arduino\\hardware\\avr\\1.8.3\\cores\\arduino\\Arduino.h"
+            ]
         }
     ],
     "version": 4
