@@ -1,32 +1,33 @@
 #include "LightTimer.h"
 
 LightTimer::LightTimer(int maxDelay, int pin) {
+    Serial.println("CONSTRUCTING....");
     _maxDelay = maxDelay;
     _pin = pin;
-    _delay = 0;
+    _wait = 0;
     _state = false;
 }
 
 void LightTimer::Read() {
     if (digitalRead(_pin) == HIGH) {
-        if (delay < _maxDelay) {
-            ChangeValue(_delay + 1, true);
+        Serial.println(_wait);
+        if (_wait < _maxDelay) {
+            _wait += 1;
+            _state = true;
         } else {
+            Serial.println("RESET1");
             Reset();
         }
     }
 }
 
 void LightTimer::Reset() {
-    ChangeValue(0, false);
+    Serial.println("RESET");
+    _wait = 0;
+    _state = false;
     digitalWrite(_pin, LOW);
 }
 
-bool LightTimer::State() {
+bool LightTimer::State() const {
     return _state;
-}
-
-void LightTimer::ChangeValue(int delay, boolean state) {
-    _delay = delay;
-    _state = state;
 }

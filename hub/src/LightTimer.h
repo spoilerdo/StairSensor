@@ -1,5 +1,5 @@
-#ifndef StairTimer_h
-#define StairTimer_h
+#ifndef LightTimer_h
+#define LightTimer_h
 
 #include <Arduino.h>
 
@@ -8,16 +8,13 @@ class LightTimer {
     LightTimer(int maxDelay, int pin);
     void Read();
     void Reset();
-    bool State();
+    bool State() const;
 
    protected:
     int _maxDelay;
     int _pin;
-    int _delay;
+    int _wait;
     bool _state;
-
-   private:
-    void ChangeValue(int delay, boolean state);
 };
 
 #endif

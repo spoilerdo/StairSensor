@@ -2,8 +2,7 @@
 
 DistanceSensor::DistanceSensor() {}
 
-long DistanceSensor::get(int _trigPin, int _echoPin)
-{
+long DistanceSensor::get(int _trigPin, int _echoPin) {
     long duration, cm;
 
     pinMode(_trigPin, OUTPUT);
@@ -19,12 +18,10 @@ long DistanceSensor::get(int _trigPin, int _echoPin)
     duration = pulseIn(_echoPin, HIGH);
 
     cm = duration / 29 / 2;
-    if (cm > 0 && cm < 1000)
-    {
+    if (cm > 0 && cm < 1000) {
         return cm;
     }
-    else
-    {
+    else {
         return 1000;
     }
 }

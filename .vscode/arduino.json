@@ -1,7 +1,7 @@
 {
-    "port": "COM3",
-    "board": "arduino:avr:nano",
-    "configuration": "cpu=atmega328old",
-    "sketch": "stair\\stair.ino",
-    "programmer": "AVR ISP"
+  "port": "COM3",
+  "board": "arduino:avr:nano",
+  "configuration": "cpu=atmega328old",
+  "sketch": "hub\\hub.ino",
+  "programmer": "AVR ISP"
 }

@@ -8,11 +8,10 @@ class Light {
    public:
     Light(int maxDelay, int pin);
     void Toggle();
-    LightTimer Timer();
-    int Pin();
+    LightTimer Timer() const;
+    int Pin() const;
 
    protected:
-    int _maxDelay;
     int _pin;
     LightTimer _timer;
 };
