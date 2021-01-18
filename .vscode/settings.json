@@ -4,7 +4,9 @@
         "iosfwd": "cpp",
         "vector": "cpp",
         "complex": "cpp",
-        "iterator_base": "cpp"
+        "iterator_base": "cpp",
+        "istream": "cpp",
+        "memory": "cpp"
     },
     "cSpell.words": [
         "println"

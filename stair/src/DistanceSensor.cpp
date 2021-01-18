@@ -8,7 +8,7 @@ long DistanceSensor::get(int _trigPin, int _echoPin)
 
     pinMode(_trigPin, OUTPUT);
     digitalWrite(_trigPin, LOW);
-    delayMicroseconds(1);
+    delayMicroseconds(7);
     digitalWrite(_trigPin, HIGH);
     delayMicroseconds(3);
     digitalWrite(_trigPin, LOW);
