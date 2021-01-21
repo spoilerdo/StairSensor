@@ -10,7 +10,6 @@ Light::Light(int maxDelay, int pin) {
 // Toggles the lights on, if the lights are already on, reset the time
 void Light::Toggle() {
     if (!_state) {
-        Serial.println("PUT ON THE LIGHT!");
         digitalWrite(_pin, HIGH);
     } else {
         ResetTime();
