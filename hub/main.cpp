@@ -23,9 +23,6 @@ void setup() {
 
     RemoteReceiver::init(0, 2, ChangeLightState);
 
-    //test
-    ChangeLightState(57050, 2);
-
     for (size_t i = 0; i <= maxStairs; i++) {
         pinMode(lights[i].Pin(), OUTPUT);
     }
