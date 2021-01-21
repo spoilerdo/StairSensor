@@ -2,18 +2,21 @@
 #define Light_h
 
 #include <Arduino.h>
-#include "LightTimer.h"
 
 class Light {
    public:
     Light(int maxDelay, int pin);
     void Toggle();
-    LightTimer Timer() const;
+    void ReadTime();
+    void ResetTime();
+    bool TimeState() const;
     int Pin() const;
 
    protected:
     int _pin;
-    LightTimer _timer;
+    int _maxDelay;
+    int _wait;
+    bool _state;
 };
 
 #endif

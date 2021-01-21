@@ -26,7 +26,7 @@ void setup() {
     //test
     ChangeLightState(57050, 2);
 
-    for (int i = 0; i < maxStairs; i++) {
+    for (size_t i = 0; i <= maxStairs; i++) {
         pinMode(lights[i].Pin(), OUTPUT);
     }
 }
@@ -34,7 +34,7 @@ void setup() {
 void loop() {
     delay(100);
 
-    for (int i = 0; i < maxStairs; i++) {
-        lights[i].Timer().Read();
+    for (size_t i = 0; i <= maxStairs; i++) {
+        lights[i].ReadTime();
     }
 }
