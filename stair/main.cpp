@@ -18,21 +18,18 @@ const int echoPin = 11;
 void setup()
 { }
 
-void loop()
-{
+void loop() {
   const long distance = distanceSensor.get(trigPin, echoPin);
   const long avgDistance = stairDistances.avg();
 
   delay(1);
 
   // First check if the distance is a peak
-  if (!detectState && distance > avgDistance + peakTreshold && distance > minStairDistance)
-  {
+  if (!detectState && distance > avgDistance + peakTreshold && distance > minStairDistance) {
     detectState = true;
     Transmitter.sendSignal('M', 12, false);
   }
-  else if (detectState && distance <= avgDistance + peakTreshold)
-  {
+  else if (detectState && distance <= avgDistance + peakTreshold) {
     detectState = false;
   }
 

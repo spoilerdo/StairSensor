@@ -1,15 +1,13 @@
 #include <Arduino.h>
 #include <RemoteReceiver.h>
 #include <RemoteTransmitter.h>
-#include <ArduinoSTL.h>
 #include "src/Light.h"
 
-using std::vector;
-
 const int maxStairs = 2;
-vector<Light> lights{Light(200, 13), Light(200, 11)};
+Light lights[2] = {Light(200, 13), Light(200, 11)};
 
 void ChangeLightState(unsigned long receivedCode, unsigned int period) {
+    Serial.println("START");
     const unsigned long sensorCodes[] = {57050, 57048, 58346, 58344};
 
     for (int i = 0; i < maxStairs * 2; i++) {
@@ -21,9 +19,14 @@ void ChangeLightState(unsigned long receivedCode, unsigned int period) {
 }
 
 void setup() {
+    Serial.begin(9600);
+
     RemoteReceiver::init(0, 2, ChangeLightState);
 
-    for (int i = 0; i < maxStairs; i++) {
+    //test
+    ChangeLightState(57050, 2);
+
+    for (size_t i = 0; i <= maxStairs; i++) {
         pinMode(lights[i].Pin(), OUTPUT);
     }
 }
@@ -31,7 +34,7 @@ void setup() {
 void loop() {
     delay(100);
 
-    for (int i = 0; i < maxStairs; i++) {
-        lights[i].Timer().Read();
+    for (size_t i = 0; i <= maxStairs; i++) {
+        lights[i].ReadTime();
     }
 }
